@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace Lab_1_and_2_CSharp
 {
@@ -13,6 +15,46 @@ namespace Lab_1_and_2_CSharp
         public V1MainCollection()
         {
             dLst = new List<V1Data>();
+        }
+
+        public DateTime? minTimeValue
+        {
+            get
+            {
+                if (dLst.Count() == 0)
+                {
+                    return null;
+                }
+
+                return dLst.Min(vD => vD.Date);
+            }
+        }
+
+        public IEnumerable<V1Data> DecAverVal
+        {
+            get
+            {
+                if (dLst.Count() == 0)
+                {
+                    return null;
+                }
+
+                return dLst.Where(vD => vD is V1DataList).OrderByDescending(vD => vD.AverageValue);
+            }
+        }
+
+        public IEnumerable<V1Data> maxMeasRes
+        {
+            get
+            {
+                if (dLst.Count() == 0)
+                {
+                    return null;
+                }
+
+                int maximum = dLst.Max(vD => vD.Count);
+                return dLst.Where(vD => vD.Count == maximum);
+            }
         }
 
         public int Count

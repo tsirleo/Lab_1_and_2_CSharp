@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_1_and_2_CSharp
 {
+    [Serializable]
     struct DataItem
     {
         public double X { get; set; }
@@ -21,7 +22,7 @@ namespace Lab_1_and_2_CSharp
         }
 
         public string ToLongString(string format) =>
-            $"DataItem: X: {string.Format(format, X)}, Y: {string.Format(format, Y)}, Field: {Field}";
+            $"DataItem: X: {string.Format(format, X)}, Y: {string.Format(format, Y)}, Field:  {string.Format(format, Field)}";
 
         public override string ToString() => $"X: {X}, Y: {Y}, Field: {Field}";
     }
