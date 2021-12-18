@@ -5,13 +5,6 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs_СSharp", "Labs_CSharp\Labs_СSharp.csproj", "{3D453F81-C402-4F7C-8C56-8CF4B2EDDCFA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Description", "Description", "{E5DD0600-F96B-447F-AB01-5B43BE803A79}"
-	ProjectSection(SolutionItems) = preProject
-		Labs_CSharp\Description\Lab1_C#_V1.pdf = Labs_CSharp\Description\Lab1_C#_V1.pdf
-		Labs_CSharp\Description\Lab2_C#_V1_2.pdf = Labs_CSharp\Description\Lab2_C#_V1_2.pdf
-		..\Материалы\Lab3_C#_V1_Advanced.pdf = ..\Материалы\Lab3_C#_V1_Advanced.pdf
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
