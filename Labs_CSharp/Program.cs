@@ -14,6 +14,7 @@ namespace Lab_1_and_2_CSharp
             //testIEnumerable();
             //testFileRdWr();
             //testLINQ();
+            //testNewFunc();
         }
 
         static void testFirstLab()
@@ -162,5 +163,32 @@ namespace Lab_1_and_2_CSharp
             Console.WriteLine(dLTest.ToLongString("{0:f4}"));
             Console.WriteLine('\n');
         }
+
+        static void testNewFunc()
+        {
+            FdblComplex func;
+            double min=0, max=0;
+            func = Operations.MakeComplex;
+            V1DataArray dATest = new V1DataArray("test", DateTime.Now, 4, 2, 0.11, 0.08, func);
+            Console.WriteLine(dATest.ToLongString("{0:f4}"));
+            Console.WriteLine("\n**********************************************************\n");
+            Console.WriteLine("field at jx = 2, jy = 1");
+            Console.WriteLine(dATest.FieldAt(2, 1));
+            Console.WriteLine('\n');
+
+            Console.WriteLine("max and min real  jy = 1");
+            dATest.Max_Field_Re(1, ref min, ref max);
+            Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
+            Console.WriteLine('\n');
+            Console.WriteLine("max and min imaginary   jy = 1");
+            dATest.Max_Field_Im(1, ref min, ref max);
+            Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
+            Console.WriteLine('\n');
+        }
+
+        //static void testMKLInterpolation()
+        //{
+
+        //}
     }
 }

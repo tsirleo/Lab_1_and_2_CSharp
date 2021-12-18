@@ -66,6 +66,66 @@ namespace Lab_1_and_2_CSharp
             }
         }
 
+        public Complex? FieldAt(int jx, int jy)
+        {
+            if (jx < nX && jy < nY)
+            {
+                return Grid[jy, jx];
+            }
+ 
+            return null;
+        }
+
+        public bool Max_Field_Re(int jy, ref double min, ref double max)
+        {
+            if (jy < nY)
+            {
+                min = Grid[jy, 0].Real;
+                max = Grid[jy, 0].Real;
+                for (int i = 1; i < nX; i++)
+                {
+                    double elem = Grid[jy, i].Real;
+                    if (elem > max)
+                    {
+                        max = elem;
+                    }
+                    else if (elem < min)
+                    {
+                        min = elem;
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Max_Field_Im(int jy, ref double min, ref double max)
+        {
+            if (jy < nY)
+            {
+                min = Grid[jy, 0].Imaginary;
+                max = Grid[jy, 0].Imaginary;
+                for (int i = 1; i < nX; i++)
+                {
+                    double elem = Grid[jy, i].Imaginary;
+                    if (elem > max)
+                    {
+                        max = elem;
+                    }
+                    else if (elem < min)
+                    {
+                        min = elem;
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
         public override string ToString() => "V1DataArray: " + base.ToString() + $"\tGrid: {nY}x{nX}\tStep_Ox: {xStep}\tStep_Oy: {yStep}";
 
         public override string ToLongString(string format)
