@@ -15,7 +15,6 @@ namespace Lab_1_and_2_CSharp
             //testFileRdWr();
             //testLINQ();
             //testNewFunc();
-            //testMKLInterpolation();
         }
 
         static void testFirstLab()
@@ -185,34 +184,6 @@ namespace Lab_1_and_2_CSharp
             dATest.Max_Field_Im(1, ref min, ref max);
             Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
             Console.WriteLine('\n');
-        }
-
-        static void testMKLInterpolation()
-        {
-            FdblComplex func;
-            double min = 0, max = 0;
-            func = Operations.MakeComplex;
-            V1DataArray dA = new V1DataArray("test", DateTime.Now, 3, 2, 0.11, 0.08, func);
-            V1DataArray scaledDA = dA.ToSmallerGrid(6);
-            Console.WriteLine(dA.ToLongString("{0:f4}"));
-            Console.WriteLine("\n**********************************************************\n");
-            Console.WriteLine("DataArray with scaled grid: ");
-            Console.WriteLine(scaledDA.ToLongString("{0:f4}"));
-            Console.WriteLine("\n**********************************************************\n");
-            Console.WriteLine("Original array: max and min real  jy = 1");
-            dA.Max_Field_Re(1, ref min, ref max);
-            Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
-            Console.WriteLine("Original array: max and min imaginary   jy = 1");
-            dA.Max_Field_Im(1, ref min, ref max);
-            Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
-            Console.WriteLine("\n**********************************************************\n");
-            Console.WriteLine("Scaled array: max and min real  jy = 1");
-            scaledDA.Max_Field_Re(1, ref min, ref max);
-            Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
-            Console.WriteLine("Scaled array: max and min imaginary   jy = 1");
-            scaledDA.Max_Field_Im(1, ref min, ref max);
-            Console.WriteLine("minimum = " + min + "    " + "maximum = " + max);
-            Console.WriteLine("\n");
         }
     }
 }

@@ -252,29 +252,5 @@ namespace Lab_1_and_2_CSharp
                 if (fStrm != null) { fStrm.Close(); }
             }
         }
-
-        //public V1DataArray ToSmallerGrid(int ns)
-        //{
-        //    int ret = 0;
-        //    try
-        //    {
-        //        Interpolate(ref ret);
-        //        if (ret = -1)
-        //        {
-        //            return null;
-        //        }
-        //        else
-        //        {
-        //            return;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-        //}
-        //[DllImport("..\\..\\..\\..\\x64\\DEBUG\\Interpolation.dll", CallingConvention = CallingConvention.Cdecl)]
-        //public static extern 
-        //void Interpolate( ref int ret);
     }
 }
